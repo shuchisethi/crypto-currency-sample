@@ -5,9 +5,9 @@
 ## Tech stack
 * [Node](https://github.com/nodejs)
 * [Serverless Framework](https://serverless.com/)
-* [AWS Lambda and API Gateway]
+* AWS Lambda and API Gateway
 * [JEST](https://jestjs.io/)
-* Eslint
+* [Eslint](https://eslint.org/)
 
 
 ## Solution
@@ -24,6 +24,7 @@ Have also implemented a custom lambda authoriser since this API is publicly avai
 
 - AWS credentials and region for deployment are configured on your local system
 - Latest node.js is globally installed on your system. This has been developed and tested on node v10.8.0 
+
 To install node - ```sudo npm install -g```
 
 ## Setup
