@@ -22,7 +22,7 @@ Installing dependencies -
 npm install
 ```
 
-##Running
+## Running
 
 In your terminal move under the directory "frontend-stack"
 
