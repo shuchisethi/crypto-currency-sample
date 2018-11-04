@@ -1,0 +1,25 @@
+{
+    "extends": "airbnb-base",
+    "env": {
+      "jest": true
+    },
+    "plugins": ["jest"],
+    "rules": {
+      "no-underscore-dangle": "off",
+      "no-console": "warn",
+      "no-unused-vars": "warn",
+      "max-len": "off",
+      "global-require": "warn",
+      "no-param-reassign": "off",
+      "class-methods-use-this": "off",
+      "indent": "warn",
+      "prefer-destructuring": [
+        "error", {"object": true, "array": false}
+      ],
+      "jest/no-disabled-tests": "warn",
+      "jest/no-focused-tests": "error",
+      "jest/no-identical-title": "error",
+      "jest/prefer-to-have-length": "warn",
+      "jest/valid-expect": "error"
+    }
+}

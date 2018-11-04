@@ -1,0 +1,65 @@
+service: best-profit
+
+frameworkVersion: ">=1.21.0 <2.0.0"
+
+plugins:
+  - serverless-prune-plugin
+  - serverless-offline
+  - serverless-pseudo-parameters
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: dev
+  region: ${opt:region, "ap-southeast-2"}
+  environment:
+  memorySize: 128
+  timeout: 10
+
+package:
+  include:
+    - node_modules/**
+  exclude:
+    - .git/**
+    - .gitignore
+    - test/**
+    - .idea/**
+
+functions:
+  apiV1Authorizer:
+    handler: src/api-authorizer.handler
+    name: ${opt:stage, self:provider.stage}-${self:service}-apiV1Authorizer
+    description: This simply checks a custom header to ensure the API is not publicly accessible.
+
+  apiV1Handler:
+    handler: src/api-handler.bestProfit
+    name: ${opt:stage, self:provider.stage}-${self:service}-apiV1Handler
+    description: Computes best profit from the historical price list of currencies provided by a currency exchange
+    events:
+    - http:
+        path: v1/best-profit
+        method: get
+        cors: true
+        authorizer:
+          name: apiV1Authorizer
+          identitySource: method.request.header.Authorization
+          resultTtlInSeconds: 0
+          identityValidationExpression: Bearer (.*)
+          type: token
+
+custom:
+  prune:
+    automatic: true
+    number: 1
+
+resources:
+  Resources:
+    GatewayResponseDefault4XX:
+      Type: 'AWS::ApiGateway::GatewayResponse'
+      Properties:
+        ResponseParameters:
+          gatewayresponse.header.Access-Control-Allow-Origin: "'*'"
+          gatewayresponse.header.Access-Control-Allow-Headers: "'*'"
+        ResponseType: DEFAULT_4XX
+        RestApiId:
+          Ref: 'ApiGatewayRestApi'
