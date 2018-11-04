@@ -15,7 +15,6 @@ Analyzes crypto currencies data and process the price list provided to return th
 
 ## Architecture Diagram
 
-![alt text](https://drive.google.com/file/d/13JMAQFrc1_zu_A_S3-if1_NOsNPcL5GF/view)
-
+![Screenshot](ArchitectureDiagram.png)
 
 * Please refer to README files within backend-stack and frontend-stack to setup and execute program and tests
