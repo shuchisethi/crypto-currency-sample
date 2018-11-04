@@ -23,6 +23,7 @@ npm install
 ```
 
 ##Running
+
 In your terminal move under the directory "frontend-stack"
 
 In terminal execute - ```npm run react-dev```

@@ -14,7 +14,7 @@
 
 Have created an API using API Gateway.
  
-The API invokes a lambda function which takes currency rates as input and returns the best profit that can be made from it.
+The API invokes a lambda function which reads currency rates as input(resources/currency-rates.js) and returns the best profit that can be made from it.
 
 Have also implemented a custom lambda authoriser since this API is publicly available.
 
