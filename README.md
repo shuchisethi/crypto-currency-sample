@@ -1,4 +1,4 @@
-# NAB Coding Challenge
+# Crypto Currency Sample 
 Analyzes crypto currencies data and process the price list provided to return the best profit that can be made by buying a currency at a given rate and then later selling it.
 
 ## Tech stack
