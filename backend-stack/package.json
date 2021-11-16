@@ -15,7 +15,7 @@
     ]
   },
   "dependencies": {
-    "aws-sdk": "^2.309.0",
+    "aws-sdk": "^2.814.0",
     "serverless": "1.30.3",
     "sugar": "^2.0.4"
   },
